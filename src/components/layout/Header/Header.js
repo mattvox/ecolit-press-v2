@@ -1,12 +1,12 @@
-import React from 'react'
-import Link from 'gatsby-link'
-import styled from 'styled-components'
-import { Grid as _Grid, Row, Col } from 'brickworks'
+import React from 'react';
+import Link from 'gatsby-link';
+import styled from 'styled-components';
+import { Grid as _Grid, Row, Col } from 'brickworks';
 
 const Grid = styled(_Grid)`
   background-color: rebeccapurple;
   margin-bottom: 1.45em;
-`
+`;
 
 const Logo = ({ title }) => (
   <div
@@ -28,7 +28,7 @@ const Logo = ({ title }) => (
       </Link>
     </h1>
   </div>
-)
+);
 
 const NavLink = styled(Link)`
   text-decoration: none;
@@ -45,7 +45,7 @@ const NavLink = styled(Link)`
   &:active {
     color: white;
   }
-`
+`;
 
 const Nav = () => (
   <ul
@@ -62,7 +62,7 @@ const Nav = () => (
       <NavLink to="/contact">Contact</NavLink>
     </li>
   </ul>
-)
+);
 
 const Header = ({ siteTitle }) => (
   <Grid style={{ position: 'absolute' }} minWidth="100%">
@@ -75,6 +75,6 @@ const Header = ({ siteTitle }) => (
       </Col>
     </Row>
   </Grid>
-)
+);
 
-export default Header
+export default Header;

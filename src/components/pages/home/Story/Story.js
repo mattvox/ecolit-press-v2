@@ -1,5 +1,7 @@
-import React from 'react'
-import { Row, Col } from 'brickworks'
+import React from 'react';
+import { Row, Col } from 'brickworks';
+
+import { Markdown, Title } from '../../../ui';
 
 // should import markdown styles here
 // should import page themes
@@ -7,18 +9,20 @@ import { Row, Col } from 'brickworks'
 const Story = ({
   data: {
     heading,
-    content: { markdown },
+    content: {
+      markdown: { html },
+    },
   },
 }) => (
   <Row>
     <Col>
-      <h2>{heading}</h2>
-      <p>{markdown}</p>
+      <Title>{heading}</Title>
+      <Markdown html={html} />
     </Col>
   </Row>
-)
+);
 
-export default Story
+export default Story;
 
 export const StoryQuery = graphql`
   fragment storyQuery on RootQueryType {
@@ -27,8 +31,10 @@ export const StoryQuery = graphql`
     ) {
       heading
       content {
-        markdown: content
+        markdown: childMarkdownRemark {
+          html
+        }
       }
     }
   }
-`
+`;

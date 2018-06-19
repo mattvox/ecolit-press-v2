@@ -1,10 +1,12 @@
-import React, { Fragment } from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import { Grid } from 'brickworks'
+import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import { Grid } from 'brickworks';
 
-import { Header } from '../components/layout'
-import './index.css'
+import './fonts.css';
+import './index.css';
+
+import { Header } from '../components/layout';
 
 const Layout = ({ children, data }) => (
   <Fragment>
@@ -27,13 +29,13 @@ const Layout = ({ children, data }) => (
       {children()}
     </Grid>
   </Fragment>
-)
+);
 
 Layout.propTypes = {
   children: PropTypes.func,
-}
+};
 
-export default Layout
+export default Layout;
 
 export const query = graphql`
   query SiteTitleQuery {
@@ -43,4 +45,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

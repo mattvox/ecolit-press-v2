@@ -1,5 +1,5 @@
-import React from 'react'
-import Link from 'gatsby-link'
+import React from 'react';
+import Link from 'gatsby-link';
 
 const ContactPage = () => (
   <div>
@@ -7,6 +7,6 @@ const ContactPage = () => (
     <p>Welcome to the Contact page.</p>
     <Link to="/">Go back</Link>
   </div>
-)
+);
 
-export default ContactPage
+export default ContactPage;
