@@ -1,10 +1,31 @@
 import React from 'react';
-import { Row, Col } from 'brickworks';
+import styled from 'styled-components';
 
-import { Markdown, Title, Subtitle } from '../../../ui';
+import {
+  Markdown,
+  Title,
+  Subtitle,
+  Section as _Section,
+  InnerSection,
+} from '../../../ui';
+import theme from '../../../../utils/theme';
 
-// should import markdown styles here
-// should import page themes
+const Section = styled(_Section)`
+  color: ${theme.colors.darkGray};
+  background: linear-gradient(
+    ${theme.colors.blue} 180px,
+    ${theme.colors.white} 180px
+  );
+
+  h1,
+  h2 {
+    color: ${theme.colors.white};
+  }
+
+  @media screen and (max-width: 768px) {
+    background: ${theme.colors.blue};
+  }
+`;
 
 const BookFeature = ({
   data: {
@@ -15,13 +36,18 @@ const BookFeature = ({
     },
   },
 }) => (
-  <Row>
-    <Col>
+  <Section xs={1} md={2} justify="center">
+    <InnerSection maxWidth={400} centered={false}>
       <Title>{bookTitle}</Title>
-      <Subtitle>{author}</Subtitle>
+      <Subtitle>By {author}</Subtitle>
       <Markdown html={html} />
-    </Col>
-  </Row>
+    </InnerSection>
+    <InnerSection maxWidth={400} centered={false}>
+      <Title>{bookTitle}</Title>
+      <Subtitle>By {author}</Subtitle>
+      <Markdown html={html} />
+    </InnerSection>
+  </Section>
 );
 
 export default BookFeature;

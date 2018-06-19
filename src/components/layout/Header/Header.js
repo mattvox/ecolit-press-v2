@@ -11,9 +11,7 @@ const Grid = styled(_Grid)`
 const Logo = ({ title }) => (
   <div
     style={{
-      margin: '0 auto',
-      maxWidth: 960,
-      padding: '1.45rem 1.0875rem',
+      padding: '1.45rem 1rem',
     }}
   >
     <h1 style={{ margin: 0 }}>
@@ -55,10 +53,10 @@ const Nav = () => (
       margin: 0,
     }}
   >
-    <li style={{ paddingRight: '1.0875rem', margin: 0 }}>
+    <li style={{ paddingRight: '1rem', margin: 0 }}>
       <NavLink to="/">Home</NavLink>
     </li>
-    <li style={{ paddingRight: '1.0875rem', margin: 0 }}>
+    <li style={{ paddingRight: '1rem', margin: 0 }}>
       <NavLink to="/contact">Contact</NavLink>
     </li>
   </ul>
@@ -66,7 +64,7 @@ const Nav = () => (
 
 const Header = ({ siteTitle }) => (
   <Grid style={{ position: 'absolute' }} minWidth="100%">
-    <Row maxWidth={960} centered alignItems="center">
+    <Row maxWidth={984} centered alignItems="center">
       <Col>
         <Logo title={siteTitle} />
       </Col>

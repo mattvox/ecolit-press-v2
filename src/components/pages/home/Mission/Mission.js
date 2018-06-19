@@ -1,7 +1,8 @@
 import React from 'react';
-import { Row, Col } from 'brickworks';
+import { ThemeProvider } from 'styled-components';
 
-import { Markdown, Title } from '../../../ui';
+import { Markdown, Title, Section, InnerSection } from '../../../ui';
+import theme from '../../../../utils/theme';
 
 // should import markdown styles here
 // should import page themes
@@ -14,12 +15,14 @@ const Mission = ({
     },
   },
 }) => (
-  <Row>
-    <Col>
-      <Title>{heading}</Title>
-      <Markdown html={html} />
-    </Col>
-  </Row>
+  <ThemeProvider theme={theme.white}>
+    <Section>
+      <InnerSection>
+        <Title>{heading}</Title>
+        <Markdown html={html} />
+      </InnerSection>
+    </Section>
+  </ThemeProvider>
 );
 
 export default Mission;

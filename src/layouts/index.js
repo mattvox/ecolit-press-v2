@@ -18,14 +18,7 @@ const Layout = ({ children, data }) => (
       ]}
     />
     <Header siteTitle={data.site.siteMetadata.title} />
-    <Grid
-      centered
-      maxWidth={960}
-      style={{
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0,
-      }}
-    >
+    <Grid centered maxWidth={960}>
       {children()}
     </Grid>
   </Fragment>
