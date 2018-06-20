@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 import { Row } from 'brickworks';
 
-export default styled(Row)`
-  padding: 2rem 1rem;
+const Section = styled(Row)`
   color: ${props => props.theme.fg};
   background-color: ${props => props.theme.bg};
 
@@ -10,3 +9,9 @@ export default styled(Row)`
     color: ${props => props.theme.h1};
   }
 `;
+
+Section.defaultProps = {
+  padded: '1em',
+};
+
+export default Section;

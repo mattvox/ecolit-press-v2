@@ -6,6 +6,7 @@ import { Grid } from 'brickworks';
 import './fonts.css';
 import './index.css';
 
+import { Box } from '../components/ui';
 import { Header } from '../components/layout';
 
 const Layout = ({ children, data }) => (

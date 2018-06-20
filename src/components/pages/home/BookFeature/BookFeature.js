@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Row, Col } from 'brickworks';
 
 import {
   Markdown,
@@ -7,14 +8,16 @@ import {
   Subtitle,
   Section as _Section,
   InnerSection,
+  Image,
 } from '../../../ui';
+
 import theme from '../../../../utils/theme';
 
 const Section = styled(_Section)`
   color: ${theme.colors.darkGray};
   background: linear-gradient(
-    ${theme.colors.blue} 180px,
-    ${theme.colors.white} 180px
+    ${theme.colors.blue} 160px,
+    ${theme.colors.white} 160px
   );
 
   h1,
@@ -34,19 +37,22 @@ const BookFeature = ({
     content: {
       markdown: { html },
     },
+    image: {
+      file: { url: imageUrl },
+    },
   },
 }) => (
-  <Section xs={1} md={2} justify="center">
-    <InnerSection maxWidth={400} centered={false}>
-      <Title>{bookTitle}</Title>
-      <Subtitle>By {author}</Subtitle>
-      <Markdown html={html} />
-    </InnerSection>
-    <InnerSection maxWidth={400} centered={false}>
-      <Title>{bookTitle}</Title>
-      <Subtitle>By {author}</Subtitle>
-      <Markdown html={html} />
-    </InnerSection>
+  <Section>
+    <Row xs={1} md={2} maxWidth={800} centered>
+      <InnerSection>
+        <Title>{bookTitle}</Title>
+        <Subtitle>By {author}</Subtitle>
+        <Markdown html={html} />
+      </InnerSection>
+      <InnerSection>
+        <Image src={imageUrl} />
+      </InnerSection>
+    </Row>
   </Section>
 );
 
@@ -62,6 +68,11 @@ export const BookFeatureQuery = graphql`
       content {
         markdown: childMarkdownRemark {
           html
+        }
+      }
+      image: bookImage {
+        file {
+          url
         }
       }
     }
