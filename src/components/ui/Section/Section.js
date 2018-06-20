@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Row } from 'brickworks';
 
 const Section = styled(Row)`
+  margin: 0.5em;
   color: ${props => props.theme.fg};
   background-color: ${props => props.theme.bg};
 

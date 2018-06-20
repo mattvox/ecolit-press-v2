@@ -1,15 +1,20 @@
 import React, { Fragment } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-import { Col } from 'brickworks';
+import { Row, Col } from 'brickworks';
 
 import { Markdown, Title, Section, InnerSection, Image } from '../../../ui';
 import theme from '../../../../utils/theme';
 
-const Test = styled(Section)`
-  padding: 1em;
-  ${Col} {
-    margin-left: -1em;
-    margin-right: -1em;
+const ImageRow = styled(Row)`
+  @media screen and (max-width: 524px) {
+    ${Col} {
+      display: none;
+    }
+
+    ${Col}:first-child {
+      display: block;
+      flex: 1;
+    }
   }
 `;
 
@@ -46,9 +51,7 @@ const Story = ({
           </InnerSection>
         </Section>
       </ThemeProvider>
-      <Test xs={3} justify="space-between" padded={false}>
-        {renderImages(images)}
-      </Test>
+      <ImageRow xs={3}>{renderImages(images)}</ImageRow>
     </Fragment>
   );
 };
