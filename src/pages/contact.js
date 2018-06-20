@@ -1,12 +1,17 @@
-import React from 'react';
-import Link from 'gatsby-link';
+import React, { Fragment } from 'react';
 
-const ContactPage = () => (
-  <div>
-    <h1>Hi people</h1>
-    <p>Welcome to the Contact page.</p>
-    <Link to="/">Go back</Link>
-  </div>
+import { Contact } from '../components/pages/contact';
+
+const ContactPage = ({ data }) => (
+  <Fragment>
+    <Contact style={{ margin: '100px' }} data={data.contact} />
+  </Fragment>
 );
 
 export default ContactPage;
+
+export const query = graphql`
+  query ContactPageQuery {
+    ...contactQuery
+  }
+`;

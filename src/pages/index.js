@@ -1,10 +1,6 @@
 import React, { Fragment } from 'react';
-import Link from 'gatsby-link';
 
 import { Landing, Mission, Story, BookFeature } from '../components/pages/home';
-
-// use react-scroll to create scroll button drop down
-// icons are font awesome, maybe include css file or react package?
 
 const IndexPage = ({ data }) => (
   <Fragment>
@@ -18,7 +14,7 @@ const IndexPage = ({ data }) => (
 export default IndexPage;
 
 export const query = graphql`
-  query IndexQuery {
+  query IndexPageQuery {
     ...storyQuery
     ...missionQuery
     ...bookFeatureQuery
