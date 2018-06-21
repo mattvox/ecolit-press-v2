@@ -1,8 +1,8 @@
+import React from 'react';
 import styled from 'styled-components';
-import { Row } from 'brickworks';
+import { Row, Col } from 'brickworks';
 
-const Section = styled(Row)`
-  margin: 0.5em;
+export const PageSection = styled(Row)`
   color: ${props => props.theme.fg};
   background-color: ${props => props.theme.bg};
 
@@ -11,8 +11,12 @@ const Section = styled(Row)`
   }
 `;
 
-Section.defaultProps = {
-  padded: '1em',
-};
+const Section = ({ theme, children }) => (
+  <Row>
+    <PageSection padded theme={theme}>
+      {children}
+    </PageSection>
+  </Row>
+);
 
 export default Section;

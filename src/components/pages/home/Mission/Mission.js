@@ -4,26 +4,25 @@ import { ThemeProvider } from 'styled-components';
 import { Markdown, Title, Section, InnerSection } from '../../../ui';
 import theme from '../../../../utils/theme';
 
-// should import markdown styles here
-// should import page themes
-
-const Mission = ({
-  data: {
+const Mission = ({ data }) => {
+  const {
     heading,
     content: {
       markdown: { html },
     },
-  },
-}) => (
-  <ThemeProvider theme={theme.white}>
-    <Section>
-      <InnerSection>
-        <Title>{heading}</Title>
-        <Markdown html={html} />
-      </InnerSection>
-    </Section>
-  </ThemeProvider>
-);
+  } = data;
+
+  return (
+    <ThemeProvider theme={theme.white}>
+      <Section>
+        <InnerSection>
+          <Title>{heading}</Title>
+          <Markdown html={html} />
+        </InnerSection>
+      </Section>
+    </ThemeProvider>
+  );
+};
 
 export default Mission;
 

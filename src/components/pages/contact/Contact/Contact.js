@@ -13,8 +13,8 @@ const Contact = ({
   },
 }) => (
   <ThemeProvider theme={theme.white}>
-    <Section style={{ paddingTop: '100px' }}>
-      <InnerSection>
+    <Section>
+      <InnerSection style={{ paddingTop: '100px' }}>
         <Title>{heading}</Title>
         <Markdown html={html} />
       </InnerSection>

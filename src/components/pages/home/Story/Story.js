@@ -18,15 +18,15 @@ const ImageRow = styled(Row)`
   }
 `;
 
-const Story = ({
-  data: {
+const Story = ({ data }) => {
+  const {
     heading,
     content: {
       markdown: { html },
     },
     images,
-  },
-}) => {
+  } = data;
+
   const renderImages = images =>
     images.map(image => {
       const {
@@ -51,7 +51,9 @@ const Story = ({
           </InnerSection>
         </Section>
       </ThemeProvider>
-      <ImageRow xs={3}>{renderImages(images)}</ImageRow>
+      <ImageRow padded xs={3}>
+        {renderImages(images)}
+      </ImageRow>
     </Fragment>
   );
 };
