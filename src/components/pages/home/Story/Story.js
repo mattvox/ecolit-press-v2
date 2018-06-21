@@ -14,6 +14,8 @@ const ImageRow = styled(Row)`
     ${Col}:first-child {
       display: block;
       flex: 1;
+      padding-left: 1em;
+      padding-right: 1em;
     }
   }
 `;
@@ -51,7 +53,7 @@ const Story = ({ data }) => {
           </InnerSection>
         </Section>
       </ThemeProvider>
-      <ImageRow padded xs={3}>
+      <ImageRow maxWidth={960} centered padded xs={3}>
         {renderImages(images)}
       </ImageRow>
     </Fragment>

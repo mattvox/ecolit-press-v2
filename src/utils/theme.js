@@ -29,7 +29,38 @@ export default {
     h1: colors.purple,
   },
   bookFeature: {
-    fg: colors.darkGray,
-    bg: css`linear-gradient(${colors.blue} 206px, ${colors.white} 206px)`,
+    h1: colors.white,
+    h2: colors.white,
+    fg: colors.lighterBlue,
+    bg: colors.green,
+    query: css`
+      @media screen and (min-width: 768px) {
+        background: linear-gradient(
+          ${colors.green} 160px,
+          ${colors.white} 160px
+        );
+
+        color: ${colors.darkGray};
+      }
+    `,
   },
 };
+/*
+const TwoColumnSection = styled(Section)`
+  padding-top: 1.25em;
+  color: ${theme.colors.darkGray};
+  background: linear-gradient(
+    ${theme.colors.blue} 160px,
+    ${theme.colors.white} 160px
+  );
+
+  h1,
+  h2 {
+    color: ${theme.colors.white};
+  }
+
+  @media screen and (max-width: 768px) {
+    background: ${theme.colors.blue};
+  }
+`;
+*/

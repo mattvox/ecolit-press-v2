@@ -2,8 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 import { Row, Col } from 'brickworks';
 
-import Section from './Section';
-import { Markdown, Title, Subtitle, InnerSection, Image } from '../../../ui';
+import theme from '../../../../utils/theme';
+
+import {
+  Markdown,
+  Title,
+  Subtitle,
+  Section,
+  InnerSection,
+  Image,
+} from '../../../ui';
 
 const BookFeature = ({ data }) => {
   const {
@@ -18,7 +26,7 @@ const BookFeature = ({ data }) => {
   } = data;
 
   return (
-    <Section>
+    <Section theme={theme.bookFeature}>
       <Row xs={1} md={2} maxWidth={800} centered>
         <InnerSection>
           <Title>{bookTitle}</Title>

@@ -1,22 +1,39 @@
 import React from 'react';
-import styled from 'styled-components';
-import { Row, Col } from 'brickworks';
+import styled, { css } from 'styled-components';
+import { Grid, Row } from 'brickworks';
 
-export const PageSection = styled(Row)`
-  color: ${props => props.theme.fg};
-  background-color: ${props => props.theme.bg};
+const PageSection = styled(Row)`
+  padding-left: 1em;
+  padding-right: 1em;
+  ${({ theme }) =>
+    theme &&
+    css`
+      color: ${theme.fg && theme.fg};
+      background: ${theme.bg && theme.bg};
 
-  h1 {
-    color: ${props => props.theme.h1};
-  }
+      h1 {
+        color: ${theme.h1 && theme.h1};
+      }
+
+      h2 {
+        color: ${theme.h2 && theme.h2};
+      }
+
+      ${theme.query && theme.query};
+    `};
+`;
+
+const SectionWrapper = styled(Grid)`
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
 `;
 
 const Section = ({ theme, children }) => (
-  <Row>
+  <SectionWrapper centered maxWidth={960}>
     <PageSection padded theme={theme}>
       {children}
     </PageSection>
-  </Row>
+  </SectionWrapper>
 );
 
 export default Section;
