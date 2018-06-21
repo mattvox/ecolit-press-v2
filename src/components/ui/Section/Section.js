@@ -3,8 +3,7 @@ import styled, { css } from 'styled-components';
 import { Grid, Row } from 'brickworks';
 
 const PageSection = styled(Row)`
-  padding-left: 1em;
-  padding-right: 1em;
+  padding: 1.4em;
   ${({ theme }) =>
     theme &&
     css`

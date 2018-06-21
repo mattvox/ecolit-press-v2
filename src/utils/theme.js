@@ -32,6 +32,11 @@ export default {
     fg: colors.lighterBlue,
     bg: colors.darkGray,
   },
+  landing: {
+    fg: colors.lighterBlue,
+    bg: 'transparent',
+    h1: colors.white,
+  },
   bookFeature: {
     h1: colors.white,
     h2: colors.white,
