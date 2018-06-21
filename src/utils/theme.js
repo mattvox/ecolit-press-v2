@@ -28,6 +28,10 @@ export default {
     bg: colors.lighterBlue,
     h1: colors.purple,
   },
+  darkGray: {
+    fg: colors.lighterBlue,
+    bg: colors.darkGray,
+  },
   bookFeature: {
     h1: colors.white,
     h2: colors.white,

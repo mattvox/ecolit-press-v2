@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const StyledMarkdown = styled.div`
+export const Content = styled.div`
   .add-padding {
     padding: 20px;
   }
@@ -76,7 +76,7 @@ const StyledMarkdown = styled.div`
 `;
 
 const Markdown = ({ html }) => (
-  <StyledMarkdown dangerouslySetInnerHTML={{ __html: html }} />
+  <Content dangerouslySetInnerHTML={{ __html: html }} />
 );
 
 Markdown.propTypes = {

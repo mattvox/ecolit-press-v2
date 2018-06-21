@@ -1,13 +1,12 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { Grid } from 'brickworks';
+import { Grid, Col } from 'brickworks';
 
 import './fonts.css';
 import './index.css';
 
-import { Box } from '../components/ui';
-import { Header } from '../components/layout';
+import { Header, Footer } from '../components/layout';
 
 const Layout = ({ children, data }) => (
   <Fragment>
@@ -18,8 +17,11 @@ const Layout = ({ children, data }) => (
         { name: 'keywords', content: 'sample, something' },
       ]}
     />
-    <Header siteTitle={data.site.siteMetadata.title} />
-    {children()}
+    <Grid minHeight="100vh" flow="column" colFlex={1}>
+      <Header siteTitle={data.site.siteMetadata.title} />
+      <Col>{children()}</Col>
+      <Footer />
+    </Grid>
   </Fragment>
 );
 
