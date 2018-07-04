@@ -4,11 +4,11 @@ require('dotenv').config({
 
 const path = require('path');
 
-exports.onCreateNode = ({ node }) => {
-  if (node.internal.type === 'MarkdownRemark') {
-    console.log(node.internal.type);
-  }
-};
+// exports.onCreateNode = ({ node }) => {
+//   if (node.internal.type === 'MarkdownRemark') {
+//     console.log(node.internal.type);
+//   }
+// };
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators;
@@ -41,12 +41,12 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         }
       `).then(result => {
         if (result.errors) {
-          reject(results.errors);
+          reject(result.errors);
         }
 
-        return result.data.allContentfulBlogPost.edges.forEach(({ node }) =>
-          createBlogPost(node)
-        );
+        const blogPosts = result.data.allContentfulBlogPost.edges;
+
+        return blogPosts.forEach(({ node }) => createBlogPost(node));
       })
     );
   });

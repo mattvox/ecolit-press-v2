@@ -1,8 +1,9 @@
 import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
 import styled, { ThemeProvider } from 'styled-components';
-import { Row, Col } from 'brickworks';
+import { Row } from 'brickworks';
 
-import { InnerSection, Title, Image } from '../../../ui';
+import { InnerSection, Image } from '../../../ui';
 import theme from '../../../../utils/theme';
 import downArrowSVG from '../../../../static/icons/angle-down.svg';
 
@@ -28,7 +29,7 @@ const Tagline = styled.h2`
 `;
 
 const Background = styled(Row)`
-  background: url(${props => props.imageUrl});
+  background: url(${({ imageUrl }) => imageUrl});
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover;
@@ -40,7 +41,7 @@ const ContentWrapper = styled(InnerSection)`
   }
 `;
 
-const Landing = ({ data, data: { image, logo } }) => (
+const Landing = ({ data: { image, logo } }) => (
   <Fragment>
     <Background minHeight="100vh" justify="center" imageUrl={image.url}>
       <ThemeProvider theme={theme.landing}>
@@ -53,10 +54,17 @@ const Landing = ({ data, data: { image, logo } }) => (
       </ThemeProvider>
     </Background>
     <Arrow>
-      <img src={downArrowSVG} />
+      <img src={downArrowSVG} alt="arrow down" />
     </Arrow>
   </Fragment>
 );
+
+Landing.propTypes = {
+  data: PropTypes.shape({
+    image: PropTypes.object.isRequired,
+    logo: PropTypes.object.isRequired,
+  }).isRequired,
+};
 
 export default Landing;
 

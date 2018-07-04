@@ -4,7 +4,7 @@ import { Grid, Row, Col } from 'brickworks';
 
 import { Content } from '../../ui';
 import { Envelope, Instagram } from '../../ui/icons';
-import theme from '../../../utils/theme';
+import themes from '../../../utils/theme';
 
 const FooterWrapper = styled(Grid)`
   background: ${({ theme }) => theme.bg && theme.bg};
@@ -29,21 +29,21 @@ const IconLink = styled.a`
   text-decoration: none;
 
   &:link {
-    color: ${theme.colors.lighterBlue};
+    color: ${themes.colors.lighterBlue};
   }
   &:visited {
-    color: ${theme.colors.mediumGray};
+    color: ${themes.colors.mediumGray};
   }
   &:hover {
-    color: ${theme.colors.mediumGray};
+    color: ${themes.colors.mediumGray};
   }
   &:active {
-    color: ${theme.colors.lighterBlue};
+    color: ${themes.colors.lighterBlue};
   }
 `;
 
 const Footer = () => (
-  <ThemeProvider theme={theme.darkGray}>
+  <ThemeProvider theme={themes.darkGray}>
     <FooterWrapper minWidth="100%" padded>
       <FooterSection
         maxWidth={984}
@@ -60,7 +60,7 @@ const Footer = () => (
               target="_blank"
             >
               <Instagram
-                fill={theme.colors.lighterBlue}
+                fill={themes.colors.lighterBlue}
                 width={32}
                 height={32}
               />
@@ -69,7 +69,7 @@ const Footer = () => (
           <Content style={{ padding: '6px 12px 0 12px' }}>
             <IconLink href="mailto:afields@ecolitpress.com">
               <Envelope
-                fill={theme.colors.lighterBlue}
+                fill={themes.colors.lighterBlue}
                 width={32}
                 height={32}
               />

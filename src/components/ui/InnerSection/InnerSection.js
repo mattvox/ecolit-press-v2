@@ -2,11 +2,11 @@ import styled from 'styled-components';
 import { Col } from 'brickworks';
 
 const InnerSection = styled(Col)`
-  color: ${props => props.theme.fg};
-  background-color: ${props => props.theme.bg};
+  color: ${({ theme }) => theme.fg};
+  background-color: ${({ theme }) => theme.bg};
 
   h1 {
-    color: ${props => props.theme.h1};
+    color: ${({ theme }) => theme.h1};
   }
 `;
 

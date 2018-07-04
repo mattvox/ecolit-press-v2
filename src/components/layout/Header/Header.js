@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
 import { Grid as _Grid, Row, Col } from 'brickworks';
@@ -74,5 +75,13 @@ const Header = ({ siteTitle }) => (
     </Row>
   </Grid>
 );
+
+Logo.propTypes = {
+  title: PropTypes.string.isRequired,
+};
+
+Header.propTypes = {
+  siteTitle: PropTypes.string.isRequired,
+};
 
 export default Header;

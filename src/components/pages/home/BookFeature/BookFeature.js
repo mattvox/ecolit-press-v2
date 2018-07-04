@@ -1,6 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
-import { Row, Col } from 'brickworks';
+import PropTypes from 'prop-types';
+import { Row } from 'brickworks';
 
 import theme from '../../../../utils/theme';
 
@@ -39,6 +39,15 @@ const BookFeature = ({ data }) => {
       </Row>
     </Section>
   );
+};
+
+BookFeature.propTypes = {
+  data: PropTypes.shape({
+    bookTitle: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+    content: PropTypes.object.isRequired,
+    image: PropTypes.object.isRequired,
+  }).isRequired,
 };
 
 export default BookFeature;

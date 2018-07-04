@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
 
 import { Landing, Mission, Story, BookFeature } from '../components/pages/home';
 
@@ -10,6 +11,12 @@ const IndexPage = ({ data }) => (
     <BookFeature data={data.bookFeature} />
   </Fragment>
 );
+
+IndexPage.propTypes = {
+  data: PropTypes.shape({
+    post: PropTypes.object,
+  }).isRequired,
+};
 
 export default IndexPage;
 

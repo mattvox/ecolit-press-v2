@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
 
 import { Markdown, Title, Section, InnerSection } from '../../../ui';
@@ -22,6 +23,13 @@ const Mission = ({ data }) => {
       </Section>
     </ThemeProvider>
   );
+};
+
+Mission.propTypes = {
+  data: PropTypes.shape({
+    heading: PropTypes.string.isRequired,
+    content: PropTypes.object.isRequired,
+  }).isRequired,
 };
 
 export default Mission;

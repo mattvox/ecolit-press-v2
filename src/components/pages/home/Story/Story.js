@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
 import styled, { ThemeProvider } from 'styled-components';
 import { Row, Col } from 'brickworks';
 
@@ -29,7 +30,7 @@ const Story = ({ data }) => {
     images,
   } = data;
 
-  const renderImages = images =>
+  const renderImages = () =>
     images.map(image => {
       const {
         file: { imageUrl },
@@ -54,10 +55,18 @@ const Story = ({ data }) => {
         </Section>
       </ThemeProvider>
       <ImageRow maxWidth={960} centered padded xs={3}>
-        {renderImages(images)}
+        {renderImages()}
       </ImageRow>
     </Fragment>
   );
+};
+
+Story.propTypes = {
+  data: PropTypes.shape({
+    heading: PropTypes.string.isRequired,
+    content: PropTypes.object.isRequired,
+    images: PropTypes.arrayOf(PropTypes.object).isRequired,
+  }).isRequired,
 };
 
 export default Story;

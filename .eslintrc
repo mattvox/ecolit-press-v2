@@ -1,0 +1,47 @@
+{
+  "extends": "airbnb",
+  "globals": {
+    "graphql": true,
+    "describe": true,
+    "it": true,
+    "shallow": true,
+    "expect": true,
+    "shallowToJson": true
+  },
+  "rules": {
+    "comma-dangle": "off",
+    "object-curly-newline": "off",
+    "arrow-parens": [1, "as-needed"],
+    "implicit-arrow-linebreak": "off",
+    "operator-linebreak": "off",
+    "react/no-danger": "off",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+    "react/jsx-one-expression-per-line": "off",
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": ["Link"],
+        "specialLink": ["hrefLeft", "hrefRight", "to"],
+        "aspects": ["noHref", "invalidHref", "preferButton"]
+      }
+    ],
+    "import/core-modules": ["React"],
+    "import/no-extraneous-dependencies": [
+      "off",
+      {
+        "peerDependencies": true
+      },
+      {
+        "devDependencies": true
+      },
+      {
+        "dependencies": true
+      }
+    ]
+  }
+}
