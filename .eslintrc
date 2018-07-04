@@ -11,10 +11,10 @@
   "rules": {
     "comma-dangle": "off",
     "object-curly-newline": "off",
-    "arrow-parens": [1, "as-needed"],
     "implicit-arrow-linebreak": "off",
     "operator-linebreak": "off",
     "react/no-danger": "off",
+    "arrow-parens": [1, "as-needed"],
     "react/jsx-filename-extension": [
       1,
       {
