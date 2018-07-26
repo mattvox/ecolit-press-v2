@@ -3,7 +3,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import { Grid, Row, Col } from 'brickworks';
 
 import { Content } from '../../ui';
-import { Envelope, Instagram } from '../../ui/icons';
+import { Envelope, Instagram } from '../../ui/Icons';
 import themes from '../../../utils/theme';
 
 const FooterWrapper = styled(Grid)`

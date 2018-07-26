@@ -45,8 +45,8 @@ export default {
     query: css`
       @media screen and (min-width: 768px) {
         background: linear-gradient(
-          ${colors.green} 160px,
-          ${colors.white} 160px
+          ${colors.green} 180px,
+          ${colors.white} 180px
         );
 
         color: ${colors.darkGray};

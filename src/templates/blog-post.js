@@ -27,9 +27,9 @@ const BlogPost = ({ data }) => {
       <Section>
         <InnerSection style={{ paddingTop: '100px' }}>
           <Title>{title}</Title>
-          <Subtitle>{short}</Subtitle>
+          {/* <Subtitle>{short}</Subtitle> */}
           <Subtitle>By {author}</Subtitle>
-          <Subtitle>Published {date}</Subtitle>
+          {/* <Subtitle>Published {date}</Subtitle> */}
           <Markdown html={html} />
         </InnerSection>
       </Section>

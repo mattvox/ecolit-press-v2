@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Row } from 'brickworks';
 
 import theme from '../../../../utils/theme';
 
 import {
+  Button,
   Markdown,
   Title,
   Subtitle,
@@ -26,18 +27,34 @@ const BookFeature = ({ data }) => {
   } = data;
 
   return (
-    <Section theme={theme.bookFeature}>
-      <Row xs={1} md={2} maxWidth={800} centered>
+    <Fragment>
+      <Section theme={theme.bookFeature}>
+        <Row xs={1} md={2} maxWidth={800} centered>
+          <InnerSection>
+            <Title>{bookTitle}</Title>
+            <Subtitle>By {author}</Subtitle>
+            <Markdown html={html} />
+          </InnerSection>
+          <InnerSection>
+            <Image src={imageUrl} />
+          </InnerSection>
+        </Row>
+      </Section>
+      <Section>
         <InnerSection>
-          <Title>{bookTitle}</Title>
-          <Subtitle>By {author}</Subtitle>
-          <Markdown html={html} />
+          <div
+            style={{
+              textAlign: 'center',
+              marginTop: '40px',
+              marginBottom: '40px',
+              width: '200px',
+            }}
+          >
+            <Button to="/books/emma">Learn More</Button>
+          </div>
         </InnerSection>
-        <InnerSection>
-          <Image src={imageUrl} />
-        </InnerSection>
-      </Row>
-    </Section>
+      </Section>
+    </Fragment>
   );
 };
 
