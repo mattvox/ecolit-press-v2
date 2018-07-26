@@ -1,7 +1,7 @@
 {
   "name": "ecolit-press-v2",
   "description": "Ecolit Press official site",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "author": "Matthew Bliffert",
   "scripts": {
     "build": "gatsby build",
