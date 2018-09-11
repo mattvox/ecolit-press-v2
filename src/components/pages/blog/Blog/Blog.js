@@ -22,7 +22,6 @@ const Subtitle = styled.h2`
   font-weight: normal;
   padding-top: 1em;
   padding-bottom: 1em;
-  ${'' /* color: ${theme.colors.mediumGray}; */} ${'' /* font-weight: bold; */};
 `;
 
 const Tagline = styled.h3`
@@ -30,7 +29,6 @@ const Tagline = styled.h3`
   color: ${theme.colors.mediumBlue};
   text-transform: uppercase;
   font-weight: 300;
-  ${'' /* text-align: center; */};
 `;
 
 const Content = styled.div`
@@ -101,14 +99,13 @@ const Content = styled.div`
     }
   }
   img {
+    margin-top: 1.45em;
     width: 100%;
     height: auto;
   }
 `;
 
 const Blog = ({ data }) => {
-  console.log(data.edges);
-
   const renderList = () =>
     data.edges.map(({ node }) => (
       <Section key={node.slug}>
@@ -129,9 +126,27 @@ const Blog = ({ data }) => {
 
   return (
     <ThemeProvider theme={theme.lighterBlue}>
-      <div style={{ padding: '100px 0 32px 0', textAlign: 'left' }}>
-        {renderList()}
-      </div>
+      <React.Fragment>
+        <div style={{ padding: '100px 0 32px 0', textAlign: 'left' }}>
+          <Section theme={theme.white}>
+            <InnerSection
+              theme={theme.white}
+              style={{ textAlign: 'left', width: '100%' }}
+            >
+              <Subtitle style={{ lineHeight: '1.8em' }}>
+                Welcome to the Ecolit Press blog! Wondering why some people go
+                vegan? Hoping to find ways to eat healthier? Maybe you want to
+                learn more about how you can support social progress? This blog
+                is here to help all of us think through how we can better
+                support our own health, the health of non-human and human
+                animals, and the overall health of our planet.
+              </Subtitle>
+            </InnerSection>
+          </Section>
+
+          {renderList()}
+        </div>
+      </React.Fragment>
     </ThemeProvider>
   );
 };

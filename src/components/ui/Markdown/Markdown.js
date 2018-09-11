@@ -70,6 +70,7 @@ export const Content = styled.div`
     }
   }
   img {
+    margin-top: 1.45em;
     width: 100%;
     height: auto;
   }

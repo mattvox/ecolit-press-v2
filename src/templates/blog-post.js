@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
+import { DiscussionEmbed } from 'disqus-react';
 
 import {
   Markdown,
@@ -13,14 +14,23 @@ import theme from '../utils/theme';
 
 const BlogPost = ({ data }) => {
   const {
+    id,
     title,
     short,
+    slug,
     author,
     content: {
       markdown: { html },
     },
     date,
   } = data.post;
+
+  const disqusShortname = 'ecolitpress-com';
+  const disqusConfig = {
+    url: `https://ecolitpress.com/blog/${slug}`,
+    identifier: id,
+    title,
+  };
 
   return (
     <ThemeProvider theme={theme.white}>
@@ -31,6 +41,7 @@ const BlogPost = ({ data }) => {
           <Subtitle>By {author}</Subtitle>
           {/* <Subtitle>Published {date}</Subtitle> */}
           <Markdown html={html} />
+          <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
         </InnerSection>
       </Section>
     </ThemeProvider>
@@ -46,8 +57,10 @@ BlogPost.propTypes = {
 export const BlogPostQuery = graphql`
   query blogPostQuery($slug: String!) {
     post: contentfulBlogPost(slug: { eq: $slug }) {
+      id
       title
       short
+      slug
       author
       content {
         markdown: childMarkdownRemark {
