@@ -111,7 +111,7 @@ const Blog = ({ data }) => {
       <Section key={node.slug}>
         <InnerSection style={{ textAlign: 'left', width: '100%' }}>
           <Tagline>
-            Published on {node.date} by {node.author}
+            Published on {node.publishedDate} by {node.author}
           </Tagline>
           <Title>{node.title}</Title>
           <Subtitle>{node.short}</Subtitle>
@@ -143,7 +143,6 @@ const Blog = ({ data }) => {
               </Subtitle>
             </InnerSection>
           </Section>
-
           {renderList()}
         </div>
       </React.Fragment>
@@ -170,6 +169,7 @@ export const BlogPostsQuery = graphql`
           short
           slug
           author
+          publishedDate(formatString: "dddd, MMMM Do, YYYY")
           content {
             markdown: childMarkdownRemark {
               excerpt(pruneLength: 300)

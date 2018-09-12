@@ -16,13 +16,11 @@ const BlogPost = ({ data }) => {
   const {
     id,
     title,
-    short,
     slug,
     author,
     content: {
       markdown: { html },
     },
-    date,
   } = data.post;
 
   const disqusShortname = 'ecolitpress-com';
