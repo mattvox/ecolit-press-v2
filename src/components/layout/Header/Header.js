@@ -70,9 +70,9 @@ const Nav = () => (
     <li style={{ paddingRight: '1rem', margin: 0 }}>
       <NavLink to="/">Home</NavLink>
     </li>
-    <li style={{ paddingRight: '1rem', margin: 0 }}>
+    {/* <li style={{ paddingRight: '1rem', margin: 0 }}>
       <NavLink to="/blog">Blog</NavLink>
-    </li>
+    </li> */}
     <li style={{ paddingRight: '1rem', margin: 0 }}>
       <NavLink to="/books/emma">Emma</NavLink>
     </li>

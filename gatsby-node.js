@@ -46,7 +46,8 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
         const blogPosts = result.data.allContentfulBlogPost.edges;
 
-        return blogPosts.forEach(({ node }) => createBlogPost(node));
+        // return blogPosts.forEach(({ node }) => createBlogPost(node));
+        return null;
       })
     );
   });
